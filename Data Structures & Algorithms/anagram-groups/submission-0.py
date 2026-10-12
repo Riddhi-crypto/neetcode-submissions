@@ -1,0 +1,9 @@
+from typing import List
+from collections import defaultdict
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        s=defaultdict(list)
+        for i in strs:
+            key=''.join(sorted(i))
+            s[key].append(i)
+        return list(s.values())
